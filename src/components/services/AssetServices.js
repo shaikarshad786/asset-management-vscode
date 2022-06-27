@@ -4,17 +4,17 @@ import { BASE_URL } from "../../store/actions/ActionConstants";
 export function fetchAllAssets(){
     return axios.get(BASE_URL+"asset/all");
 }
-export function fetchAssetsById(assetId){
-    return axios.get(BASE_URL+"asset/find/byId/"+assetId);
+export function fetchAssetsById(id){
+    return axios.get(BASE_URL+"asset/find/byId/"+id);
 }
-export function saveAssets(asset){
-    return axios.post(BASE_URL+"asset/add",asset);
+export function saveAssets(id,asset){
+    return axios.post(BASE_URL+"asset/add/"+id,asset);
 }
 export function editAssets(asset){
     return axios.put(BASE_URL+"asset/modify",asset);
 }
-export function deleteAssets(assetId){
-    return axios.delete(BASE_URL+"asset/delete/"+assetId);
+export function deleteAssets(id){
+    return axios.delete(BASE_URL+"asset/delete/"+id);
 }
 export function fetchAllAssetsByPrice(assetPrice){
     return axios.get(BASE_URL+"asset/all/byPrice/"+assetPrice);

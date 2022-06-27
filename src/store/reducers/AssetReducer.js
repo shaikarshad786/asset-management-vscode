@@ -4,7 +4,7 @@ const intialState={
     assets:[],
     asset : null,
     newAsset : null,
-    updateAsset:null,
+    updatedAsset:null,
     deleteAsset:null,
     price:[],
     name:[],
@@ -37,7 +37,7 @@ export default function assetReducer(state=intialState,action){
         console.log(action.payload);
         return ({
             ...state,
-            updateAsset: action.payload
+            updatedAsset: action.payload
         })
     }
     if (action.type === ASSET_DELETE_BYID) {

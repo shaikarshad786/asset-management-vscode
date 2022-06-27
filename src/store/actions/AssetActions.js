@@ -3,7 +3,7 @@ import { ADD_ASSET, ASSET_DELETE_BYID, ASSET_FETCHALL_BYCATEGORY, ASSET_FETCHALL
 
 export function getAllAssets() {
     return (dispatch) => {
-        fetchAllAssets().then(
+        return fetchAllAssets().then(
             resp => {
                 dispatch(getAllAssetSuccess(resp.data));
             }
@@ -20,7 +20,7 @@ export function getAllAssetSuccess(data) {
 
 export function getAssetDetails(id) {
     return (dispatch) => {
-        fetchAssetsById(id).then(
+        return fetchAssetsById(id).then(
             resp => {
                 dispatch(getAssetSuccess(resp.data))
             }
@@ -34,10 +34,10 @@ export function getAssetSuccess(data) {
     }
 }
 
-export function addAsset(asset) {
+export function addAsset(id, asset) {
 
     return (dispatch) => {
-        saveAssets(asset).then(
+        return saveAssets(id, asset).then(
             resp => {
                 dispatch(addAssetSuccess(resp.data));
             }
@@ -55,7 +55,7 @@ export function addAssetSuccess(data) {
 export function updateAsset(asset) {
 
     return (dispatch) => {
-        editAssets(asset).then(
+        return editAssets(asset).then(
             resp => {
                 dispatch(updateAssetSuccess(resp.data));
             }
@@ -71,7 +71,7 @@ export function updateAssetSuccess(data) {
 }
 export function deleteAsset(id) {
     return (dispatch) => {
-        deleteAssets(id).then(
+        return deleteAssets(id).then(
             resp => {
                 dispatch(deleteAssetSuccess(resp.data));
             }
@@ -86,7 +86,7 @@ export function deleteAssetSuccess(data) {
 }
 export function getAllAssetsByPrice(assetPrice) {
     return (dispatch) => {
-        fetchAllAssetsByPrice(assetPrice).then(
+        return fetchAllAssetsByPrice(assetPrice).then(
             resp => {
                 dispatch(getAllAssetsSuccess1(resp.data));
             }
@@ -102,7 +102,7 @@ export function getAllAssetsSuccess1(data) {
 }
 export function getAllAssetsByName(assetName) {
     return (dispatch) => {
-        fetchAllAssetsByName(assetName).then(
+        return fetchAllAssetsByName(assetName).then(
             resp => {
                 dispatch(getAllAssetsByNameSuccess(resp.data));
             }
@@ -118,7 +118,7 @@ export function getAllAssetsByNameSuccess(data) {
 }
 export function getAllAssetsByCategory(assetCategory) {
     return (dispatch) => {
-        fetchAllAssetsByCategory(assetCategory).then(
+        return fetchAllAssetsByCategory(assetCategory).then(
             resp => {
                 dispatch(getAllAssetsByCategorySuccess(resp.data));
             }
@@ -134,7 +134,7 @@ export function getAllAssetsByCategorySuccess(data) {
 }
 export function getAllAssetsByType(assetType) {
     return (dispatch) => {
-        fetchAllAssetsByType(assetType).then(
+        return fetchAllAssetsByType(assetType).then(
             resp => {
                 dispatch(getAllAssetsByTypeSuccess(resp.data));
             }

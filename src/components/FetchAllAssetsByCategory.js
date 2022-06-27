@@ -16,6 +16,7 @@ function FetchAllAssetsByCategory(){
         myFunction();
     },[]);  
     return (
+        
         <div >
             <div className='row'>
                 {
